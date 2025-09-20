@@ -1,19 +1,20 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Inicio from '@/views/Inicio.vue'
-import Menu from '@/views/Menu.vue'
-import Pedido from '@/views/Pedido.vue'
+// ANTES
+// import { createRouter, createWebHistory } from 'vue-router'
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: '/', component: Inicio },
-    { path: '/menu', component: Menu },
-    { path: '/pedido', component: Pedido },
-  ],
-  scrollBehavior: () => ({ top: 0 })
-})
+// DESPUÉS
+import { createRouter, createWebHashHistory } from 'vue-router'
+import Inicio from '@/views/inicio.vue'
+import Menu from '@/views/menu.vue'
+import Pedido from '@/views/pedido.vue'
+
+const routes = [
+  { path: '/', component: Inicio, name: 'inicio' },
+  { path: '/menu', component: Menu, name: 'menu' },
+  { path: '/pedido', component: Pedido, name: 'pedido' },
+]
 
 export default createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // ANTES: createWebHistory(import.meta.env.BASE_URL)
+  history: createWebHashHistory(),   // 👈 compatible 100% con GitHub Pages
   routes,
 })
