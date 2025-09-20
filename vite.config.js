@@ -9,5 +9,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  server: { port: 5173 }
+  server: {
+    port: 5173
+  },
+  base: '/pollo-vue/'  // 👈 agrega esto con el nombre de tu repo
 })
