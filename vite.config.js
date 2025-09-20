@@ -12,5 +12,6 @@ export default defineConfig({
   server: {
     port: 5173
   },
-  base: '/pollo-vue/'  // 👈 agrega esto con el nombre de tu repo
+  base: '/pollo-vue/', 
+  build: { outDir: 'docs' } // 👈 agrega esto con el nombre de tu repo
 })
